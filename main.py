@@ -40,14 +40,14 @@ def snake_ladder(player_score):
         if player_score in snake.keys():
             player_score = snake[player_score]
             check_ladder = False
-            print(colored("Snake Found Demoted to " + str(player_score), "red"))
+            print(colored(f"Snake Found Demoted to {str(player_score)}", "red"))
             break
 
     if check_ladder:
         for ladder in ladders:
             if player_score in ladder.keys():
                 player_score = ladder[player_score]
-                print(colored("Ladder Found Promoted to " + str(player_score), "green"))
+                print(colored(f"Ladder Found Promoted to {str(player_score)}", "green"))
                 break
 
     return player_score
@@ -61,5 +61,3 @@ if __name__ == "__main__":
             PLAYER_SCORE = PLAYER_SCORE + DICE_VALUE
             PLAYER_SCORE = snake_ladder(PLAYER_SCORE)
             print("The Player Score", PLAYER_SCORE)
-        else:
-            pass
